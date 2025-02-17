@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Browser Tabs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="browser chrome-layout">
+        <div class="toolbar">
+            <button class="layout-toggle">
+                <i class="fas fa-columns"></i>
+            </button>
+        </div>
+        <div class="tabs">
+            <div class="tab active" data-tab="1" draggable="true">
+                <span class="drag-handle">&#9776;</span>
+                <input type="text" class="tab-title" value="New Tab">
+                <button class="close-tab">&times;</button>
+            </div>
+            <button class="new-tab">+</button>
+        </div>
+        <div class="content active" data-content="1">
+            <h2 class="page-title">New Tab</h2>
+            <textarea class="page-content" placeholder="Paste your text here"></textarea>
+            <input type="file" class="image-upload" accept="image/*">
+            <div class="image-preview"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
