@@ -149,17 +149,59 @@
     flex-grow: 1;
     resize: none;
   }
+
+  .add-image {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+  .image-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
   
   .image-upload {
     margin-bottom: 16px;
     color: #e0e0e0;
   }
   
-  .image-preview img {
-    max-width: 100%;
-    max-height: 300px;
-    object-fit: contain;
-  }
+  .image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.image-wrapper img {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #444;
+}
+
+.remove-image {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
   
   /* Chrome-like layout */
   .chrome-layout {
