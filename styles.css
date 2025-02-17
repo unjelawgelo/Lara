@@ -214,7 +214,23 @@
       overflow: hidden;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
-  
+
+
+      #increase-font,
+#decrease-font {
+    background-color: rgba(51, 51, 51, 0.6); /* Same as toolbar2 and toolbar3 */
+    color: white; /* White text */
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#increase-font:hover,
+#decrease-font:hover {
+    background-color: rgba(70, 70, 70, 0.8); /* Slightly lighter on hover */
+}
+
     body {
       padding: 20px;
       justify-content: center;
