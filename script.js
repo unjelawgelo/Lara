@@ -81,22 +81,42 @@ document.addEventListener("DOMContentLoaded", () => {
     function setupContentListeners(content) {
         const imageUpload = content.querySelector(".image-upload");
         const imagePreview = content.querySelector(".image-preview");
+        const addImageButton = content.querySelector(".add-image");
 
-        imageUpload.addEventListener("change", (e) => {
-            const file = e.target.files[0];
-            if (file) {
+        function handleImageUpload(files) {
+            for (const file of files) {
                 const reader = new FileReader();
                 reader.onload = (e) => {
+                    const imgWrapper = document.createElement("div");
+                    imgWrapper.className = "image-wrapper";
+
                     const img = document.createElement("img");
                     img.src = e.target.result;
-                    imagePreview.innerHTML = "";
-                    imagePreview.appendChild(img);
+
+                    const removeButton = document.createElement("button");
+                    removeButton.textContent = "X";
+                    removeButton.className = "remove-image";
+                    removeButton.addEventListener("click", () => {
+                        imgWrapper.remove();
+                    });
+
+                    imgWrapper.appendChild(img);
+                    imgWrapper.appendChild(removeButton);
+                    imagePreview.appendChild(imgWrapper);
                 };
                 reader.readAsDataURL(file);
             }
+        }
+
+        imageUpload.addEventListener("change", (e) => {
+            handleImageUpload(e.target.files);
+        });
+
+        addImageButton.addEventListener("click", () => {
+            imageUpload.click();
         });
     }
-
+    d
     function switchTab(clickedTab) {
         document.querySelectorAll(".tab").forEach((tab) => tab.classList.remove("active"));
         document.querySelectorAll(".content").forEach((content) => content.classList.remove("active"));
